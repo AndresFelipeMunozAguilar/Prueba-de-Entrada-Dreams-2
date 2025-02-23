@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     private float direction;
 
+    public float dropDistance = 4.0f;
     public float speed = 1.0f;
     void Awake()
     {
@@ -50,5 +51,18 @@ public class EnemyController : MonoBehaviour
          */
 
         transform.position += Vector3.right * direction * speed * Time.deltaTime;
+    }
+
+    public void ChangeDirection()
+    {
+        /**
+         * Cambia la dirección de los enemigos
+         * hacia la derecha.
+         */
+
+        transform.position += Vector3.down * dropDistance;
+
+        direction *= -1;
+
     }
 }
