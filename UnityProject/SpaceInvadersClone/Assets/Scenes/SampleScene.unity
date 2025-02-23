@@ -237,6 +237,7 @@ MonoBehaviour:
   firePoint: {fileID: 1597285426}
   bulletPrefab: {fileID: 6352795916943249029, guid: abe80bb0a370618449d1e6445782b343, type: 3}
   shootKey: 32
+  maxReloadTime: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
