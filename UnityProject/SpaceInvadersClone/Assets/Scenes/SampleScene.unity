@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2131764279622112849, guid: d6970a07407e5a84e9d91e9332367ee9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.05
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 2131764279622112849, guid: d6970a07407e5a84e9d91e9332367ee9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d807f09539bc0d419b86a320e8ed2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2131764279622112849, guid: d6970a07407e5a84e9d91e9332367ee9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.56
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 2131764279622112849, guid: d6970a07407e5a84e9d91e9332367ee9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -781,8 +781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448acf9f7027a3249bf0b417aa1818d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropDistance: 2
-  speed: 2
+  baseDropDistance: 0.4
+  baseSpeed: 1
+  difficultyIncrease: 0.25
+  speed: 1
 --- !u!1 &1597285425
 GameObject:
   m_ObjectHideFlags: 0

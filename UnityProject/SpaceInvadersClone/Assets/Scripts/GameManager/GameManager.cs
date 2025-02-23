@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int level = 1;
+    public int level = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

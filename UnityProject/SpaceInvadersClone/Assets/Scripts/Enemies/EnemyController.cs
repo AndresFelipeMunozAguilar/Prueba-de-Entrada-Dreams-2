@@ -9,8 +9,12 @@ public class EnemyController : MonoBehaviour
 
     private float direction;
 
-    public float dropDistance = 4.0f;
-    public float speed = 1.0f;
+    public float baseDropDistance = 4.0f;
+    public float baseSpeed = 1.0f;
+
+    public float difficultyIncrease = 0.3f;
+
+    public float speed = 0f;
     void Awake()
     {
         if (Instance == null)
@@ -29,6 +33,10 @@ public class EnemyController : MonoBehaviour
         gameManager = GameManager.Instance;
 
         direction = 1f;
+
+        speed = difficultyIncrease * (gameManager.level - 1) + baseSpeed;
+        Debug.Log("Current Level: " + gameManager.level);
+        Debug.Log("Current Speed: " + speed);
     }
 
     void Update()
@@ -60,7 +68,7 @@ public class EnemyController : MonoBehaviour
          * hacia la derecha.
          */
 
-        transform.position += Vector3.down * dropDistance;
+        transform.position += Vector3.down * baseDropDistance;
 
         direction *= -1;
 
