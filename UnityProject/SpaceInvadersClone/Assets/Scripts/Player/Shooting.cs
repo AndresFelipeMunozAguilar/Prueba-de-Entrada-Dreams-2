@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
             currentReloadTime -= Time.deltaTime;
         }
 
-        Debug.Log("Current Reload Time: " + currentReloadTime);
+        // Debug.Log("Current Reload Time: " + currentReloadTime);
     }
 
     public void Shoot()

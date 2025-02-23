@@ -1,34 +1,32 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static EnemyController Instance { get; private set; }
 
-    public int level = 1;
+    private GameManager gameManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         if (Instance == null)
         {
-
             Instance = this;
             DontDestroyOnLoad(gameObject);
-
         }
         else
         {
-
             Destroy(gameObject);
         }
-
-
     }
+
+    void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
+
 
     private void OnDestroy()
     {
         Instance = null;
     }
-
-
 }
