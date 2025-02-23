@@ -1,2 +1,5 @@
 # Prueba-de-Entrada-Dreams-2
-Este repositorio contiene los archivos, assets y configuraciones generadas con el objetivo de dar solución a la prueba de entrada de Dreams aplicada a Andrés Felipe Muñoz Aguilar, en Febrero del 2025.
+El presente repositorio tiene como finalidad dar solución a la prueba de entrada de Dreams, la cual consiste en el desarrollo de un clon del videojuego *Space Invaders*, cumpliendo con los requerimientos técnicos y funcionales exigidos por la empresa. 
+
+### Autoría
+La implementación de esta solución ha sido llevada a cabo, por Andrés Felipe Muñoz Aguilar en febrero del año 2025.
