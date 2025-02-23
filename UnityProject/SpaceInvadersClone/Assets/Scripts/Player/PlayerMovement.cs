@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Variable auxiliar para almacenar la posición del jugador
     private Vector3 positionAux;
 
+
     void Start()
     {
         // Calcula los límites de la pantalla en coordenadas del mundo
@@ -41,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-
         Movement(horizontalInput);
+
     }
 
 
