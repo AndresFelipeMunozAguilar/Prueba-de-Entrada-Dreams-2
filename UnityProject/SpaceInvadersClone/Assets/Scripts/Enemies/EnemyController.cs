@@ -34,8 +34,8 @@ public class EnemyController : MonoBehaviour
 
         direction = 1f;
 
-        speed = difficultyIncrease * (gameManager.level - 1) + baseSpeed;
-        Debug.Log("Current Level: " + gameManager.level);
+        speed = difficultyIncrease * (gameManager.Level - 1) + baseSpeed;
+        Debug.Log("Current Level: " + gameManager.Level);
         Debug.Log("Current Speed: " + speed);
     }
 
