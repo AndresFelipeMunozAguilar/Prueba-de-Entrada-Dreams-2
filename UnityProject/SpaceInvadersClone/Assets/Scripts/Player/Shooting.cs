@@ -4,6 +4,8 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
 
+    public GameObject bulletPrefab;
+
     // Variable para almacenar la tecla de disparo
     public KeyCode shootKey = KeyCode.Space;
 
@@ -28,6 +30,12 @@ public class Shooting : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Pew pew");
+        /**
+         * Instancia on objeto de tipo Bullet en la
+         * posición y la rotación del firePoint (El 
+         * cañón del jugador) 
+         */
+
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
