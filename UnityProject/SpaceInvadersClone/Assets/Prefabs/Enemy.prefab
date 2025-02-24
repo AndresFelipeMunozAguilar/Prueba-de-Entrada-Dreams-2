@@ -252,5 +252,5 @@ MonoBehaviour:
   maxReloadTime: 2
   invokeToggleShooting: 6.1
   toggleShootingRate: 6
-  pendienteDeDificultad: 0.03333
-  baseDeDificultad: 0.01666
+  chanceIncrease: 0.02777
+  baseChance: 0.1

@@ -15,8 +15,8 @@ public class EnemyController : MonoBehaviour
     // Velocidad base del movimiento de los enemigos
     public float baseSpeed = 1.0f;
 
-    // Incremento de dificultad por nivel
-    public float difficultyIncrease = 0.3f;
+    // Incremento de la velocidad por nivel
+    public float speedIncrease = 0.3f;
 
     // Velocidad actual del movimiento de los enemigos
     public float speed = 0f;
@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
         }
 
         playerHeight = playerTransform.position.y;
-        Debug.Log("Player height: " + playerHeight);
+        // Debug.Log("Player height: " + playerHeight);
 
     }
 
@@ -64,7 +64,7 @@ public class EnemyController : MonoBehaviour
 
         // Calcula la velocidad de los enemigos basada en el nivel actual
         // del juego
-        speed = difficultyIncrease * (gameManager.Level - 1) + baseSpeed;
+        speed = speedIncrease * (gameManager.Level - 1) + baseSpeed;
         // Debug.Log("Current Level: " + gameManager.Level);
         // Debug.Log("Current Speed: " + speed);
 

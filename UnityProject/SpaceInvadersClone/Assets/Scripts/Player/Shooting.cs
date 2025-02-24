@@ -15,10 +15,24 @@ public class Shooting : MonoBehaviour
 
     // Variables para controlar el tiempo de recarga
     // en segundos
-    public float maxReloadTime = 5.0f;
+    [SerializeField]
+    private float maxReloadTime;
     private float currentReloadTime = 0.0f;
 
+    public float reloadIncrease = 0.22222f;
+    public float baseReload = 5f;
+    void Start()
+    {
+        if (GameManager.Instance != null)
+        {
+            maxReloadTime = (reloadIncrease * (GameManager.Instance.Level - 1)) + baseReload;
 
+        }
+        else
+        {
+            Debug.LogError("GameManager no encontrado");
+        }
+    }
 
     // Update is called once per frame
     void Update()

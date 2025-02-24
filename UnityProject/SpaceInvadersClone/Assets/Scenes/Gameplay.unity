@@ -676,6 +676,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6352795916943249029, guid: abe80bb0a370618449d1e6445782b343, type: 3}
   shootKey: 32
   maxReloadTime: 0.5
+  reloadIncrease: -0.08333
+  baseReload: 1
 --- !u!50 &159034089
 Rigidbody2D:
   serializedVersion: 5
@@ -1149,7 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d807f09539bc0d419b86a320e8ed2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 5
+  level: 10
+  score: 0
 --- !u!1001 &515202082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3492,10 +3495,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDropDistance: 0.4
   baseSpeed: 1
-  difficultyIncrease: 0.25
+  speedIncrease: 0.22222
   speed: 1
   lockChangeDirectionTime: 1
   player: {fileID: 159034090}
+  playerTransform: {fileID: 159034086}
 --- !u!1 &1597285425
 GameObject:
   m_ObjectHideFlags: 0

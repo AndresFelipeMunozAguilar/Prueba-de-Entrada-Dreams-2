@@ -39,9 +39,9 @@ public class EnemyShooting : MonoBehaviour
      * y una base de dificultad (Que tan dificil es el
      * juego en el nivel 1)
      */
-    public float pendienteDeDificultad = 0.1f;
+    public float chanceIncrease = 0.1f;
 
-    public float baseDeDificultad = 0.1f;
+    public float baseChance = 0.1f;
     void Start()
     {
         gameManager = GameManager.Instance;
@@ -55,7 +55,7 @@ public class EnemyShooting : MonoBehaviour
         // instancia del prefab de enemigo
         randomValue = Random.Range(0f, 1f);
 
-        activationChance = (gameManager.Level * pendienteDeDificultad) + baseDeDificultad;
+        activationChance = (chanceIncrease * (gameManager.Level - 1)) + baseChance;
 
         // Si el valor aleatorio es menor que activationChance, 
         // se permite que el enemigo dispare

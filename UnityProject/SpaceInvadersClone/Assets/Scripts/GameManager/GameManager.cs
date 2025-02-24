@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int level;
 
+    [SerializeField]
     private int score;
 
     void Awake()
