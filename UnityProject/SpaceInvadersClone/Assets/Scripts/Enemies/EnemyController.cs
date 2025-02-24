@@ -21,6 +21,10 @@ public class EnemyController : MonoBehaviour
     // Velocidad actual del movimiento de los enemigos
     public float speed = 0f;
 
+    private bool canChangeDirection = true;
+
+    public float lockChangeDirectionTime = 1f;
+
     void Awake()
     {
         /*
@@ -51,8 +55,8 @@ public class EnemyController : MonoBehaviour
         // Calcula la velocidad de los enemigos basada en el nivel actual
         // del juego
         speed = difficultyIncrease * (gameManager.Level - 1) + baseSpeed;
-        Debug.Log("Current Level: " + gameManager.Level);
-        Debug.Log("Current Speed: " + speed);
+        // Debug.Log("Current Level: " + gameManager.Level);
+        // Debug.Log("Current Speed: " + speed);
     }
 
     void Update()
@@ -73,6 +77,8 @@ public class EnemyController : MonoBehaviour
          * dependiendo de la dirección actual.
          */
         transform.position += Vector3.right * direction * speed * Time.deltaTime;
+
+        // Debug.Log("Current direction: " + direction);
     }
 
 
@@ -83,7 +89,30 @@ public class EnemyController : MonoBehaviour
          * Cambia la dirección de los enemigos, sin embargo,
          * previamente los hace descender una distancia predefinida.
          */
+
+        // Si la función está bloqueada, no permite que se
+        // cambie la dirección, nuevamente        
+        if (!canChangeDirection)
+        {
+            return;
+        }
+
+        // Se bloquea la función para evitar 
+        // multiples llamadas a la misma función
+        canChangeDirection = false;
+
+        // Debug.Log("ChangeDirection() llamado - Dirección antes: " + direction);
         transform.position += Vector3.down * baseDropDistance;
         direction *= -1;
+        // Debug.Log("Dirección después: " + direction);
+
+
+        Invoke(nameof(ResetDirectionChange), lockChangeDirectionTime);
+    }
+
+
+    public void ResetDirectionChange()
+    {
+        canChangeDirection = true;
     }
 }

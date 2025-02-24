@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int level;
 
+    private int score;
 
     void Awake()
     {
@@ -48,5 +49,11 @@ public class GameManager : MonoBehaviour
     {
         get { return level; }
         set { level = value; }
+    }
+
+    public int Score
+    {
+        get { return score; }
+        set { score = value; Debug.Log("Score: " + score); }
     }
 }
