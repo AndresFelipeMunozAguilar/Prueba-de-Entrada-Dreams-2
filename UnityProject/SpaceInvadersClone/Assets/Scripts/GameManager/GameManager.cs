@@ -54,6 +54,6 @@ public class GameManager : MonoBehaviour
     public int Score
     {
         get { return score; }
-        set { score = value; Debug.Log("Score: " + score); }
+        set { score = value; }
     }
 }

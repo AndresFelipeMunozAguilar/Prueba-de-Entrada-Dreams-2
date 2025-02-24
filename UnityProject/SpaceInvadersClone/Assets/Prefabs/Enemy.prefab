@@ -236,6 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 8667950010835764823}
   bulletPrefab: {fileID: 6352795916943249029, guid: 71f291a1c782fca4f91d9bd7bbfa42da, type: 3}
-  maxReloadTime: 5
-  upperReloadLimit: 15
-  lowerReloadLimit: 14
+  maxReloadTime: 2
+  invokeToggleShooting: 6.1
+  toggleShootingRate: 6
+  pendienteDeDificultad: 0.03333
+  baseDeDificultad: 0.01666

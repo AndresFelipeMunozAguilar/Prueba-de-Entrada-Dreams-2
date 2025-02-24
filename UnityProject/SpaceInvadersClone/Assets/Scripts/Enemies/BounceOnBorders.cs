@@ -12,7 +12,7 @@ public class BounceOnBorders : MonoBehaviour
 
         if (enemyController == null)
         {
-            Debug.LogError("EnemyController is null");
+            // Debug.LogError("EnemyController is null");
         }
     }
 

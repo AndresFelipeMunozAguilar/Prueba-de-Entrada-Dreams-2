@@ -36,7 +36,7 @@ public class EnemyBullet : MonoBehaviour
     {
         Movement();
 
-        Debug.Log("Outside condition: " + outsideCondition);
+        // Debug.Log("Outside condition: " + outsideCondition);
     }
 
     public void Movement()
