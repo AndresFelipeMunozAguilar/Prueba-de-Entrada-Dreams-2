@@ -7,9 +7,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int level;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Awake()
     {
+        /* 
+         * Implementacion el patrón de diseño Singleton.
+         * Debido a que la clase GameManager es responsable de 
+         * gestionar el estado del juego, debe existir solo una 
+         * instanciade, pues, evita inconsistencias en el estado
+         * del juego, tales como el nivel actual, la puntuación, etc.
+         */
         if (Instance == null)
         {
             Instance = this;
@@ -26,9 +33,13 @@ public class GameManager : MonoBehaviour
         Instance = null;
     }
 
-    // Método para inicializar las propiedades de la clase
+
     public void Initialize(int initialLevel)
     {
+        /* 
+            * Método para inicializar las propiedades de la clase
+        */
+
         level = initialLevel;
     }
 
