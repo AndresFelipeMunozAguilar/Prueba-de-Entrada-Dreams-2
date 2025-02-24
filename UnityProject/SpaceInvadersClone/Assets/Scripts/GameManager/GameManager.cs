@@ -21,17 +21,21 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+            return;
         }
     }
 
     private void OnDestroy()
     {
-        Instance = null;
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
 

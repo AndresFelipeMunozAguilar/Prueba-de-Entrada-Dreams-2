@@ -25,6 +25,13 @@ public class EnemyController : MonoBehaviour
 
     public float lockChangeDirectionTime = 1f;
 
+    private bool canHeightKill = true;
+
+    public Player player;
+
+    public Transform playerTransform;
+
+    private float playerHeight;
     void Awake()
     {
         /*
@@ -37,12 +44,15 @@ public class EnemyController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
+
+        playerHeight = playerTransform.position.y;
+        Debug.Log("Player height: " + playerHeight);
+
     }
 
     void Start()
@@ -57,6 +67,9 @@ public class EnemyController : MonoBehaviour
         speed = difficultyIncrease * (gameManager.Level - 1) + baseSpeed;
         // Debug.Log("Current Level: " + gameManager.Level);
         // Debug.Log("Current Speed: " + speed);
+
+
+
     }
 
     void Update()
@@ -114,5 +127,30 @@ public class EnemyController : MonoBehaviour
     public void ResetDirectionChange()
     {
         canChangeDirection = true;
+    }
+
+    public void HeightKill()
+    {
+
+        if (!canHeightKill)
+        {
+            return;
+        }
+
+        canHeightKill = false;
+
+        player.TakeDamage();
+
+        Invoke(nameof(ResetHeightKill), 1f);
+    }
+
+    public void ResetHeightKill()
+    {
+        canHeightKill = true;
+    }
+
+    public float PlayerHeight
+    {
+        get { return playerHeight; }
     }
 }
