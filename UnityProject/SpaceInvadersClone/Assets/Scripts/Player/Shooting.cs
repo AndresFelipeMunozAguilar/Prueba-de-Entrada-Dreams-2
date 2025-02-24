@@ -18,10 +18,7 @@ public class Shooting : MonoBehaviour
     public float maxReloadTime = 5.0f;
     private float currentReloadTime = 0.0f;
 
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void Update()

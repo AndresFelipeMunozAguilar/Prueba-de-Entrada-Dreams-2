@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed = 0.1f;
 
     private Vector2 direction;
 
     private Vector2 screenBounds;
-    private float upperBound;
+    private float lowerBound;
 
     // Distancia a la que la bala se destruirá
     // con respecto al límite superior de la pantalla
@@ -17,13 +17,16 @@ public class Bullet : MonoBehaviour
 
     private float outsideCondition;
 
-    public string targetTag = "Enemy";
+    public string targetTag = "Player";
+
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        upperBound = screenBounds.y;
+        lowerBound = -screenBounds.y;
         bulletHalfHeight = GetComponent<SpriteRenderer>().bounds.size.y / 2;
-        outsideCondition = upperBound + bulletHalfHeight + despawningOffset;
+        outsideCondition = lowerBound - bulletHalfHeight - despawningOffset;
+
+
 
         direction = transform.up;
     }
@@ -32,6 +35,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         Movement();
+
+        Debug.Log("Outside condition: " + outsideCondition);
     }
 
     public void Movement()
@@ -43,7 +48,7 @@ public class Bullet : MonoBehaviour
         // entre frames
         transform.position += (Vector3)direction * speed * Time.deltaTime;
 
-        if (transform.position.y >= outsideCondition)
+        if (transform.position.y <= outsideCondition)
         {
             Destroy(gameObject);
         }
@@ -53,7 +58,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag(targetTag))
         {
-            other.GetComponent<Enemy>().TakeDamage();
+            other.GetComponent<Player>().TakeDamage();
             Destroy(gameObject);
         }
     }

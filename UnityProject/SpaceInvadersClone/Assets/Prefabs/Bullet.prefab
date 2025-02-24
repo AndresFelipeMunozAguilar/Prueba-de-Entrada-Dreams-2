@@ -134,7 +134,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5, y: 1.3}
+  m_Size: {x: 1.5, y: 1.17}
   m_EdgeRadius: 0
 --- !u!114 &6299743447774751291
 MonoBehaviour:
@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  despawningOffset: 5
+  despawningOffset: 1
+  targetTag: Enemy
 --- !u!50 &-7750526734067674420
 Rigidbody2D:
   serializedVersion: 5
