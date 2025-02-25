@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -17,7 +18,11 @@ public class EnemyBullet : MonoBehaviour
 
     private float outsideCondition;
 
-    public string targetTag = "Player";
+    public Dictionary<string, string> targetTags = new Dictionary<string, string>
+    {
+        { "Player", "Player" },
+        { "Shield", "Shield" }
+    };
 
     void Start()
     {
@@ -56,9 +61,15 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(targetTag))
+        if (other.gameObject.CompareTag(targetTags["Player"]))
         {
             other.GetComponent<Player>().TakeDamage();
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag(targetTags["Shield"]))
+        {
+            other.GetComponent<Shield>().TakeDamage();
             Destroy(gameObject);
         }
     }

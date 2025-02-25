@@ -8,5 +8,9 @@ La presente sección especifica los requerimientos de software necesarios para p
 - Unity versión 6000.0.36f1  
 - Visual Studio Code 1.97.2 (O cualquier edito de código de preferencia)
 
+### Sprites
+En el presente proyecto, el sprite correspondiente a las defensas del jugador ha sido diseñado y dibujado manualmente por mi persona. Este elemento gráfico ha sido creado usando la herramienta gratuita de dibujo **Piskel**
+
+
 ### Autoría
 La implementación de esta solución ha sido llevada a cabo, por **Andrés Felipe Muñoz Aguilar** en febrero del año 2025.

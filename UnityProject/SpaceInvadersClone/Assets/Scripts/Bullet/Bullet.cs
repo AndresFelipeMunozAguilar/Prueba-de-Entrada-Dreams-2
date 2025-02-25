@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
@@ -17,9 +18,13 @@ public class Bullet : MonoBehaviour
 
     private float outsideCondition;
 
-    public string targetTag = "Enemy";
 
-    public string targetTag2 = "BonusEnemy";
+    public Dictionary<string, string> targetTags = new Dictionary<string, string>
+    {
+        { "Enemy", "Enemy" },
+        { "BonusEnemy", "BonusEnemy" },
+        { "Shield", "Shield" }
+    };
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -53,15 +58,21 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag(targetTag))
+        if (other.gameObject.CompareTag(targetTags["Enemy"]))
         {
             other.GetComponent<Enemy>().TakeDamage();
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag(targetTag2))
+        if (other.gameObject.CompareTag(targetTags["BonusEnemy"]))
         {
             other.GetComponent<BonusEnemy>().TakeDamage();
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag(targetTags["Shield"]))
+        {
+            other.GetComponent<Shield>().TakeDamage();
             Destroy(gameObject);
         }
     }
