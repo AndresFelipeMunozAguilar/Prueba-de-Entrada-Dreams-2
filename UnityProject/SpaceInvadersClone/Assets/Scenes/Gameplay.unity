@@ -2997,6 +2997,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BonusEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3421073205284515542, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
+      propertyPath: firstMovementTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421073205284515542, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
+      propertyPath: timeBetweenMovements
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6797777047392819489, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.188
