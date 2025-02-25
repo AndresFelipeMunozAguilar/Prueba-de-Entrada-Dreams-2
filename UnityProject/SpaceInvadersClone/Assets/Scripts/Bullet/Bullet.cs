@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
     private float outsideCondition;
 
     public string targetTag = "Enemy";
+
+    public string targetTag2 = "BonusEnemy";
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -54,6 +56,12 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag(targetTag))
         {
             other.GetComponent<Enemy>().TakeDamage();
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag(targetTag2))
+        {
+            other.GetComponent<BonusEnemy>().TakeDamage();
             Destroy(gameObject);
         }
     }
