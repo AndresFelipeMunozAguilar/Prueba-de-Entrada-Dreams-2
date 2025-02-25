@@ -676,8 +676,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6352795916943249029, guid: abe80bb0a370618449d1e6445782b343, type: 3}
   shootKey: 32
   maxReloadTime: 0.5
-  reloadIncrease: -0.08333
-  baseReload: 1
+  reloadIncrease: -0.02777
+  baseReload: 0.5
 --- !u!50 &159034089
 Rigidbody2D:
   serializedVersion: 5
@@ -2999,15 +2999,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3421073205284515542, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
       propertyPath: firstMovementTime
-      value: 1
+      value: 4.66666
       objectReference: {fileID: 0}
     - target: {fileID: 3421073205284515542, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
       propertyPath: timeBetweenMovements
-      value: 5
+      value: 3.66666
       objectReference: {fileID: 0}
     - target: {fileID: 6797777047392819489, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.188
+      value: -9.42
       objectReference: {fileID: 0}
     - target: {fileID: 6797777047392819489, guid: 8d94e5cc39d22954c8df43345bbe3625, type: 3}
       propertyPath: m_LocalPosition.y

@@ -81,6 +81,6 @@ public class BonusEnemy : MonoBehaviour
     {
         gameManager.Score += scoreIncrease;
         transform.position = new Vector3(direction * (rightBound + enemyHalfWidth + offSet), transform.position.y, transform.position.z);
-        ChangeDirection();
+
     }
 }

@@ -252,5 +252,5 @@ MonoBehaviour:
   maxReloadTime: 2
   invokeToggleShooting: 6.1
   toggleShootingRate: 6
-  chanceIncrease: 0.02777
-  baseChance: 0.1
+  chanceIncrease: 0.01666
+  baseChance: 0.05
