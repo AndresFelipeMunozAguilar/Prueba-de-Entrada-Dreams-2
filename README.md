@@ -1,6 +1,9 @@
 # Prueba-de-Entrada-Dreams-2
 El presente repositorio tiene como finalidad dar solución a la prueba de entrada de Dreams, la cual consiste en el desarrollo de un clon del videojuego *Space Invaders*, cumpliendo con los requerimientos técnicos y funcionales exigidos por la empresa. 
 
+## Controles
+El sistema de control diseñado para la manipulación del personaje,  permite desplazarse de manera lateral, a través de mantener presionadas las flechas izquierda y derecha del teclado, permitiendo desplazarse en sentido zurdo y diestro, respectivamente. Adicionalmente, la mecánica de disparo se ejecuta al mantener presionada la barra espaciadora, lo cual genera una ráfaga de balas. Sin embargo, también se permite realizar un disparo único con una breve pulsación de esta tecla.
+
 ### Requerimientos
 La presente sección especifica los requerimientos de software necesarios para poder ejecutar el código. Se recomienda la instalación de los siguientes programas:
 
